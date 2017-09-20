@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 # GS-Shapley Algorithm
 # Created by: Akshay Singh and 
 # Date: 
@@ -21,6 +22,10 @@ girlPrefer = {}
 
 girlIndex = {0:'Ele', 1:'Ema', 2:'Cath', 3:'Kate', 4:'Sara', 5:"Ivy", 6:"Hope", 7:"Kim", 8:"Sam", 9:"Sahr"}
 
+"""
+   This function accepts girlIndex and guyIndex keys
+   and return the keys that are shuffled using Knuth Shuffle.
+"""
 #COPIED-------------------------------
 def knuth_shuffle(x):
 	for i in range(len(x)-1, 0, -1):
@@ -29,14 +34,27 @@ def knuth_shuffle(x):
 	return x
 #--------------------------------------
 
-
+""" 
+   Function accepts a list freeMen, 
+   #that has all the guys who are not engaged. 
+"""
 def free_Men(fm):
 	for man in guyPrefer.keys():
 		fm.append(man)
 	
+"""
+   This is the main macthing function
+   that does all the stable matching.
+   It accepts FreeMen list, engaged dictionary
+   and girlEngaged dictionary
 
+   It returns engaged dictionary that has the
+   pairs and it return the process time that is
+   used to show the CPU time
+"""
 def matching(fm,engaged,girlEngaged):
 	t = time.process_time()
+	#t1 = time.time()
 	while(len(fm) > 0):
 		for man in guyPrefer.keys():
 			#print(guyIndex[man],"proposes to"," ", end="")
@@ -65,7 +83,11 @@ def matching(fm,engaged,girlEngaged):
 						break
 													
 		break
-	return engaged,(time.process_time() - t)
+	return engaged,(time.process_time() - t)#, (time.time()-t1)
+
+"""
+   This is the main function that calls all the functions
+"""
 def main():
 
 	freeMen = []
@@ -106,15 +128,14 @@ def main():
 		print(" ",guyIndex[key],"-", girlIndex[value])
 
 	#print(engaged)
-	print("Elapsed wall clock time: ")
+#	print("Elapsed wall clock time: ", timeClock)
 	print("Elapsed CPU time: ", timeProcess)
 	print("Stable matchup") 
-	
+
 	#Taking User Input
 	person = input('Another trial? (y)es, (n)o ')
-	while(person == "y" or "yes"):
+	while(person == 'y' or 'yes'):
 		#person = input("Another trial? (yes), (n)o")
 		main()
-
 			
 main()
