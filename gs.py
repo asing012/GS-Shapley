@@ -36,6 +36,7 @@ def free_Men(fm):
 	
 
 def matching(fm,engaged,girlEngaged):
+	t = time.process_time()
 	while(len(fm) > 0):
 		for man in guyPrefer.keys():
 			#print(guyIndex[man],"proposes to"," ", end="")
@@ -64,9 +65,9 @@ def matching(fm,engaged,girlEngaged):
 						break
 													
 		break
-	return engaged
+	return engaged,(time.process_time() - t)
 def main():
-	t0 = time.process_time()
+
 	freeMen = []
 	engaged = {}
 	girlEngaged = {}
@@ -98,7 +99,7 @@ def main():
 		for i in value:
 			print(guyIndex[i], ",", end="")
 		print("")
-	engaged = matching(freeMen, engaged, girlEngaged)
+	engaged,timeProcess = matching(freeMen, engaged, girlEngaged)
 	
 	print("Pairing :")
 	for key, value in engaged.items():
@@ -106,7 +107,7 @@ def main():
 
 	#print(engaged)
 	print("Elapsed wall clock time: ")
-	print("Elapsed CPU time: ", time.process_time() - t0)
+	print("Elapsed CPU time: ", timeProcess)
 	print("Stable matchup") 
 	
 	#Taking User Input
