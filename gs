@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 
 # GS-Shapley Algorithm
-# Created by: Akshay Singh and
-# Date: 09/20/2017
-# Purpose: It creates pairs of men and women
-#          using gale-shapley alroithm.
+# Created by: Akshay Singh and 
+# Date: 09/20/2017 
+# Purpose: It creates pairs of men and women 
+#	   using gale-shapley alroithm.
 # INPUT(S): None
 # OUTPUT(S): Participants
-#            Preferences
-#            Pairing
+#	     Preferences
+#	     Pairing
 #            CPU Time and CLock Time
 # EXAMPLES:
-#          Sahr :Erik ,Oman ,Jack ,John ,Kirk ,Amos ,Kapi ,Yaz ,Jim ,Rhys ,
-#          John proposes to   Sam
-#          John  engaged to  Sam
-#          Pairing :
-#           Jack - Cath
+#	   Sahr :Erik ,Oman ,Jack ,John ,Kirk ,Amos ,Kapi ,Yaz ,Jim ,Rhys ,
+#	   John proposes to   Sam
+#	   John  engaged to  Sam
+#	   Pairing :
+#  	    Jack - Cath
 
 
 import time
@@ -85,7 +85,7 @@ def matching(fm,engaged,girlEngaged):
 						fm.remove(man)
 						del engaged[currentGuy]
 						fm.append(currentGuy)					
-						print(girlIndex[woman]," dumps", guyIndex[currentGuy])						
+						print(girlIndex[woman]," dumps", guyIndex[currentGuy])
 						print(guyIndex[man], " engaged to ", girlIndex[woman])
 						break
 													

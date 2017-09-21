@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
 # GS-Shapley Algorithm
-# Created by: Akshay Singh and
-# Date: 09/20/2017
-# Purpose: Take argument from user and that number
-#          to create indexes and create pairs using GS Algoritm
+# Created by: Akshay Singh and 
+# Date: 09/20/2017 
+# Purpose: Take argument from user and that number 
+#	   to create indexes and create pairs using GS Algoritm
 # INPUT(S): Number of girls and guys
 # OUTPUT(S): Number of girls and guys and the processing time
 # EXAMPLES: 100   0.0002324479999999962
+
 
 
 import time
